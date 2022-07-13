@@ -1,5 +1,4 @@
 
-
 from time import sleep
 import wpilib
 from wpilib.drive import MecanumDrive
@@ -60,9 +59,7 @@ def autonomousInit(self):
     
     
     
-def autonomousPeriodic(self): 
-
-            wpilib.Encoder()
+def autonomousPeriodic(self):      
             if self.timer.get() < 3.0:
                 self.frontLeftMotor.set(1)
                 self.frontRightMotor.set(-1)
