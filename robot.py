@@ -65,16 +65,15 @@ def autonomousPeriodic(self):
             wpilib.Encoder()
             if self.timer.get() < 3.0:
                 self.frontLeftMotor.set(1)
-            self.frontRightMotor.set(-1)
-            self.rearLeftMotor.set(1)
-            self.rearRightMotor.set(-1) # Drive forwards at half speed
+                self.frontRightMotor.set(-1)
+                self.rearLeftMotor.set(1)
+                self.rearRightMotor.set(-1) # Drive forwards at half speed
             else:
-
-        
-            self.frontLeftMotor.set(0)
-            self.frontRightMotor.set(0)
-            self.rearLeftMotor.set(0)
-            self.rearRightMotor.set(0)  # Stop robot
+                self.frontLeftMotor.set(0)
+                self.frontRightMotor.set(0)
+                self.rearLeftMotor.set(0)
+                self.rearRightMotor.set(0)
+          # Stop robot
 
            
     
