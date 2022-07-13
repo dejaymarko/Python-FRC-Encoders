@@ -19,6 +19,7 @@ class MyRobot(wpilib.TimedRobot):
         self.rearLeftMotor = ctre.WPI_TalonSRX(3)
         self.frontRightMotor = ctre.WPI_TalonSRX(1)
         self.rearRightMotor = ctre.WPI_TalonSRX(2)
+        self.timer = wpilib.Timer()
         
 
         # invert the left side motors
@@ -52,33 +53,30 @@ class MyRobot(wpilib.TimedRobot):
     
     
 def autonomousInit(self):
-        frontLeftMotor.GetSelectedSensorpos()
+     
+     self.timer.reset()
+     self.timer.start()
+      #frontLeftMotor.GetSelectedSensorpos()
+    
     
     
 def autonomousPeriodic(self): 
 
             wpilib.Encoder()
-            self.frontLeftMotor.set(3)
-            self.frontRightMotor.set(3)
-            self.rearLeftMotor.set(3)
-            self.rearRightMotor.set(3)
-            sleep(1)
-            self.frontLeftMotor.set(3)
-            self.frontRightMotor.set(0)
-            self.rearLeftMotor.set(0)
-            self.rearRightMotor.set(3)
-            sleep(1)
-            self.frontLeftMotor.set(3)
-            self.frontRightMotor.set(3)
-            self.rearLeftMotor.set(3)
-            self.rearRightMotor.set(3)
-            sleep(1)
-            self.frontLeftMotor.set(3)
-            self.frontRightMotor.set(0)
-            self.rearLeftMotor.set(0)
-            self.rearRightMotor.set(3)
-            sleep(1)
+            if self.timer.get() < 3.0:
+                self.frontLeftMotor.set(1)
+            self.frontRightMotor.set(-1)
+            self.rearLeftMotor.set(1)
+            self.rearRightMotor.set(-1) # Drive forwards at half speed
+            else:
 
+        
+            self.frontLeftMotor.set(0)
+            self.frontRightMotor.set(0)
+            self.rearLeftMotor.set(0)
+            self.rearRightMotor.set(0)  # Stop robot
+
+           
     
 
 
