@@ -61,32 +61,32 @@ def autonomousInit(self):
     
 def autonomousPeriodic(self):      
             wpilib.Encoder()
-            while self.time.get < 12.0:
-                if self.timer.get() < 3.0:
+            
+            while self.timer.get() < 3.0:
                     self.frontLeftMotor.set(1)
                     self.frontRightMotor.set(0)
                     self.rearLeftMotor.set(1)
                     self.rearRightMotor.set(0)
                     sleep(3)
-                elif 3.0 <= self.timer.get()< 6.0:
+            while 3.0 <= self.timer.get()< 6.0:
                     self.frontLeftMotor.set(-1)
                     self.frontRightMotor.set(1)
                     self.rearLeftMotor.set(1)
                     self.rearRightMotor.set(-1)
                     sleep(3)
-                elif 6.0 <= self.timer.get() < 9.0:
+            while 6.0 <= self.timer.get() < 9.0:
                  self.frontLeftMotor.set(1)
                  self.frontRightMotor.set(0)
                  self.rearLeftMotor.set(1)
                  self.rearRightMotor.set(0)
                  sleep(3)
-                elif 9.0 <= self.timer.get() < 12.0: 
+            while 9.0 <= self.timer.get() < 12.0: 
                      self.frontLeftMotor.set(1)
                      self.frontRightMotor.set(-1)
                      self.rearLeftMotor.set(-1)
                      self.rearRightMotor.set(1)
                      sleep(3)
-                else: break
+                
             
 
 
