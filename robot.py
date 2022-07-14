@@ -56,20 +56,41 @@ def autonomousInit(self):
      self.timer.reset()
      self.timer.start()
       #frontLeftMotor.GetSelectedSensorpos()
-    
+   
     
     
 def autonomousPeriodic(self):      
-            if self.timer.get() < 3.0:
-                self.frontLeftMotor.set(1)
-                self.frontRightMotor.set(-1)
-                self.rearLeftMotor.set(1)
-                self.rearRightMotor.set(-1) # Drive forwards at half speed
-            else:
-                self.frontLeftMotor.set(0)
-                self.frontRightMotor.set(0)
-                self.rearLeftMotor.set(0)
-                self.rearRightMotor.set(0)
+            wpilib.Encoder()
+            while self.time.get < 12.0:
+                if self.timer.get() < 3.0:
+                    self.frontLeftMotor.set(1)
+                    self.frontRightMotor.set(0)
+                    self.rearLeftMotor.set(1)
+                    self.rearRightMotor.set(0)
+                    sleep(3)
+                elif 3.0 <= self.timer.get()< 6.0:
+                    self.frontLeftMotor.set(-1)
+                    self.frontRightMotor.set(1)
+                    self.rearLeftMotor.set(1)
+                    self.rearRightMotor.set(-1)
+                    sleep(3)
+                elif 6.0 <= self.timer.get() < 9.0:
+                 self.frontLeftMotor.set(1)
+                 self.frontRightMotor.set(0)
+                 self.rearLeftMotor.set(1)
+                 self.rearRightMotor.set(0)
+                 sleep(3)
+                elif 9.0 <= self.timer.get() < 12.0: 
+                     self.frontLeftMotor.set(1)
+                     self.frontRightMotor.set(-1)
+                     self.rearLeftMotor.set(-1)
+                     self.rearRightMotor.set(1)
+                     sleep(3)
+                else: break
+            
+
+
+                
           # Stop robot
 
            
